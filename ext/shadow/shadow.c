@@ -62,8 +62,8 @@ rb_shadow_sgetspent(VALUE self, VALUE str)
     return Qnil;
 
   result = rb_struct_new(rb_sPasswdEntry,
-		      rb_tainted_str_new2(entry->sp_namp),
-		      rb_tainted_str_new2(entry->sp_pwdp),
+		      rb_str_new2(entry->sp_namp),
+		      rb_str_new2(entry->sp_pwdp),
 		      INT2FIX(entry->sp_lstchg),
 		      INT2FIX(entry->sp_min),
 		      INT2FIX(entry->sp_max),
@@ -92,8 +92,8 @@ rb_shadow_fgetspent(VALUE self, VALUE file)
     return Qnil;
 
   result = rb_struct_new(rb_sPasswdEntry,
-		      rb_tainted_str_new2(entry->sp_namp),
-		      rb_tainted_str_new2(entry->sp_pwdp),
+		      rb_str_new2(entry->sp_namp),
+		      rb_str_new2(entry->sp_pwdp),
 		      INT2FIX(entry->sp_lstchg),
 		      INT2FIX(entry->sp_min),
 		      INT2FIX(entry->sp_max),
@@ -117,8 +117,8 @@ rb_shadow_getspent(VALUE self)
     return Qnil;
 
   result = rb_struct_new(rb_sPasswdEntry,
-		      rb_tainted_str_new2(entry->sp_namp),
-		      rb_tainted_str_new2(entry->sp_pwdp),
+		      rb_str_new2(entry->sp_namp),
+		      rb_str_new2(entry->sp_pwdp),
 		      INT2FIX(entry->sp_lstchg),
 		      INT2FIX(entry->sp_min),
 		      INT2FIX(entry->sp_max),
@@ -145,8 +145,8 @@ rb_shadow_getspnam(VALUE self, VALUE name)
     return Qnil;
 
   result = rb_struct_new(rb_sPasswdEntry,
-		      rb_tainted_str_new2(entry->sp_namp),
-		      rb_tainted_str_new2(entry->sp_pwdp),
+		      rb_str_new2(entry->sp_namp),
+		      rb_str_new2(entry->sp_pwdp),
 		      INT2FIX(entry->sp_lstchg),
 		      INT2FIX(entry->sp_min),
 		      INT2FIX(entry->sp_max),
