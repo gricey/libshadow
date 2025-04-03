@@ -169,7 +169,7 @@ rb_shadow_putspent(VALUE self, VALUE entry, VALUE file)
   int result;
 
   for(i=0; i<=8; i++)
-    val[i] = RSTRUCT_PTR(entry)[i];
+    val[i] = rb_ary_entry(entry, i);
   cfile = file_ptr(RFILE(file)->fptr);
 
   centry.sp_namp = StringValuePtr(val[0]);
